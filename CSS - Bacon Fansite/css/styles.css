@@ -1,0 +1,48 @@
+/* Tag selectors*/
+
+h1 {
+  color: red;
+  font-size: 100px;
+  margin: 0;
+}
+
+/*
+img {
+  background-color: red;
+}
+*/
+
+/* Class selectors */
+
+.bacon {
+  background-color: green;
+}
+
+.broccoli {
+  background-color: red;
+}
+
+.headingclass {
+  color: aqua;
+}
+
+/* id selectors */
+
+#heading {
+  color: blue;
+}
+
+/* Difference between id and class selectors
+  -> IDs are unique for the given html page or each id is unique to an element for a given html page.
+  -> You can't have more than one ID for a particular element.
+  -> many elements can be grouped by specifying same class name.
+  -> A particular element can have many IDs
+*/
+
+/* CSS Convention
+  -> All the rules are arranged in alphabetical order
+*/
+
+/* Pseudo Class
+  -> can be used to change the css rules for any element based on its state.
+*/
