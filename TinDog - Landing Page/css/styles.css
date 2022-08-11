@@ -68,12 +68,7 @@ h3 {
 
 #title {
     background-color: #ff4c68;
-    position: relative;
-    z-index: -1;
-}
-
-.title-container {
-    height: 42vmax;
+    height: 40rem;
 }
 
 .icon {
@@ -94,7 +89,6 @@ h3 {
     padding: 4rem 0;
     position: relative;
     background-color: white;
-    z-index: 1;
 }
 
 #testimonials {
