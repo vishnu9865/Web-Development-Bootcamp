@@ -1,12 +1,127 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-item {
+    margin: auto 1rem;
+}
+
+.brand-name{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.navbar-collapse {
+    font-family: 'Ubuntu', sans-serif;
+
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.row {
+    margin-top: 5rem;
+}
+
+.dog-img {
+    width: 50%;
+    transform: rotate(20deg);
+}
+
+.container-fluid {
+    padding: 3% 10%;
+}
 
 h1 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat';
+    color: white;
     font-size: 3rem;
     line-height: 1.5;
     font-weight: 900;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.5;
+
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.feature-description {
+    color: #8f8f8f;
+
 }
 
 #title {
     background-color: #ff4c68;
+    height: 100%;
+}
+
+.icon {
+    font-size: 4rem;
+    color: #ef8172;
+}
+.icon:hover {
+    color: #ff4c68;
+}
+
+.feature {
+    text-align: center;
+}
+
+#features {
+    width: 80%;
+    margin: 4rem auto;
+}
+
+#testimonials {
+    text-align: center;
+    background-color: #ff4c68;
+    color:white;
+}
+
+
+.testimonial-image {
+    width: 10%;
+    border-radius: 50%;
+    margin: 1.2rem;
+}
+
+#press {
+    background-color: #ff4c68;
+    text-align: center;
+    color: white;
+    padding-bottom: 4rem;
+}
+
+.press-logo {
+    width: 15%;
+    margin: 1.5rem 1.5rem 2rem;
+}
+
+.carousel-card {
+    padding: 4rem 10rem;
+}
+
+.row {
+    margin-top: 2rem;
+}
+
+#pricing {
+    padding: 4rem 8em;
+    text-align: center;
+}
+
+.pricing-card {
+    pricing: 3% 2%;
 }
