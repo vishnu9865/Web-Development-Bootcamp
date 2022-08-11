@@ -2,6 +2,7 @@
 
 .body {
     font-family: 'Montserrat', sans-serif;
+    text-align: center;
 }
 
 .nav-item {
@@ -29,9 +30,14 @@
     position: relative;
 }
 
+.dog-img-container {
+    position: relative;
+}
+
 .dog-img {
     width: 50%;
     transform: rotate(20deg);
+    position: absolute;
 }
 
 .container-fluid {
@@ -68,7 +74,10 @@ h3 {
 
 #title {
     background-color: #ff4c68;
-    height: 40rem;
+}
+
+.title-container {
+    padding-bottom: 7rem;
 }
 
 .icon {
@@ -85,10 +94,15 @@ h3 {
 
 #features {
     width: 80%;
-    margin: 0 auto;
-    padding: 4rem 0;
+    padding: 4rem 6rem;
     position: relative;
     background-color: white;
+    width: 100%;
+}
+
+.feature-container {
+    padding: 4rem 0;
+    margin: 0 auto 0 auto;
 }
 
 #testimonials {
@@ -131,4 +145,52 @@ h3 {
 
 .pricing-card {
     pricing: 3% 2%;
+}
+
+#cta {
+    background-color: #ff4c68;
+    text-align: center;
+    padding: 4rem;
+}
+
+.cta-heading {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.cta-button {
+    margin: 2rem 0.5rem;
+}
+
+#footer {
+    padding: 4rem;
+    text-align: center;
+}
+
+.footer-icon {
+    margin: 0.5rem;
+}
+
+.copyright-text {
+    color: #8f8f8f;
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+@media (max-width: 767px) {
+    #title {
+        text-align: center;
+    }
+
+    .title-container {
+        padding-bottom: 6rem;
+    }
+
+    .dog-img {
+        position: static;
+        margin-top: 2rem;
+        transform: rotate(0);
+    }
 }
