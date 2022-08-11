@@ -25,6 +25,10 @@
     margin-top: 5rem;
 }
 
+.title-row {
+    position: relative;
+}
+
 .dog-img {
     width: 50%;
     transform: rotate(20deg);
@@ -64,7 +68,12 @@ h3 {
 
 #title {
     background-color: #ff4c68;
-    height: 100%;
+    position: relative;
+    z-index: -1;
+}
+
+.title-container {
+    height: 42vmax;
 }
 
 .icon {
@@ -81,7 +90,11 @@ h3 {
 
 #features {
     width: 80%;
-    margin: 4rem auto;
+    margin: 0 auto;
+    padding: 4rem 0;
+    position: relative;
+    background-color: white;
+    z-index: 1;
 }
 
 #testimonials {
