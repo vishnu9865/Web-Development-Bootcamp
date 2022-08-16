@@ -69,7 +69,7 @@ function checkAnswer( currentLevel){
             console.log('Success');
             setTimeout( () => { nextSequence();}, 1000);
         }
-    }else{
+    }else {
         failure();
         console.log('Failure');
         startOver();
