@@ -1,0 +1,14 @@
+{
+  "name": "calculator-expressjs-challenge",
+  "version": "1.0.0",
+  "description": "This is a Calculator Web App",
+  "main": "calculator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeyavishnu S",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

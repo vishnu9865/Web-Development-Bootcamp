@@ -14,6 +14,10 @@ app.get('/contact', ( req, res) => {
     res.send("Contact me at: sjeyavishnu9865@gmail.com");
 });
 
+app.get('/about', ( req, res) => {
+    res.send("This website is owned by Jeyavishnu S")
+});
+
 app.listen( port,function(){
     console.log('Server started on Port 3000..');
 });
