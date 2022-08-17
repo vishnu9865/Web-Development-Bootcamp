@@ -1,0 +1,15 @@
+{
+  "name": "intro-to-node",
+  "version": "1.0.0",
+  "description": "This package is about my learning in Intro to Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeyavishnu S",
+  "license": "ISC",
+  "dependencies": {
+    "superheroes": "^3.0.0",
+    "supervillains": "^3.0.0"
+  }
+}
