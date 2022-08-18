@@ -44,4 +44,5 @@ input::placeholder {
 
 .container img {
     width: 100px;
+    border-radius: 10%;
 }
