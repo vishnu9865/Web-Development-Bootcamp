@@ -1,0 +1,11 @@
+{
+  "name": "newsletter-signup",
+  "version": "1.0.0",
+  "description": "this is a newsletter signup web app which records the email details of user subscribing for newsletter",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeyavishnu S",
+  "license": "ISC"
+}
