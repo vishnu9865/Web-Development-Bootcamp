@@ -12,7 +12,7 @@ app.use(express.static("public"));
 // list ID
 // 75b94114b4.
 
-app.listen( 3000, () => {
+app.listen( process.env.PORT, () => {
     console.log("Started server on port 3000");
 });
 
@@ -43,16 +43,18 @@ app.post( "/signup", ( req, res) => {
     const url = "https://us8.api.mailchimp.com/3.0/lists/75b94114b4";
     const options = {
         method: "POST",
-        auth: "jeyavishnu:a30f63cd31b19f1fad166da28b6a470f3-us8"
+        auth: "jeyavishnu:30f63cd31b19f1fad166da28b6a470f3-us8"
     };
 
     const request = https.request( url, options, ( response) => {
 
-        if( response.statusCode === 200) {
-            res.sendFile( __dirname + "/success.html");
-        } else {
-            res.sendFile( __dirname + "/failure.html");
-        }
+        // if( response.statusCode === 200) {
+        //     res.sendFile( __dirname + "/success.html");
+        // } else {
+        //     res.sendFile( __dirname + "/failure.html");
+        // }
+
+        res.send(response.statusCode);
 
         response.on( "data", ( data) => {
             console.log(JSON.parse(data));
