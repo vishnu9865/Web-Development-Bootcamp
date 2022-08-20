@@ -12,6 +12,9 @@ app.set( "view engine", "ejs");
 //set the static directory to load css and media from
 app.use(express.static('public'));
 
+const date = require( __dirname+ "/date.js");
+
+
 // listen on port 3000
 app.listen( 3000, () => {
     console.log("Sever started on port 3000");
@@ -65,5 +68,5 @@ app.post("/", (req, res) => {
 app.get("/about", (req, res) => {
 
     res.render("about");
-    
+
 });
