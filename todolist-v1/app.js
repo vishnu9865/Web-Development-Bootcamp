@@ -17,7 +17,7 @@ app.listen( 3000, () => {
     console.log("Sever started on port 3000");
 });
 
-var items = [];
+let items = [];
 
 // reply to get '/'
 app.get("/", ( req, res) => {
