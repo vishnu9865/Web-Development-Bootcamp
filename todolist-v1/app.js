@@ -19,6 +19,8 @@ app.listen( 3000, () => {
 
 let items = [];
 
+let workListItems = [];
+
 // reply to get '/'
 app.get("/", ( req, res) => {
 
@@ -32,13 +34,36 @@ app.get("/", ( req, res) => {
     var date = today.toLocaleDateString("en-IN", options);
 
     res.render( 'list', {
-        dayEJS: date,
+        listTitle: date,
         newListItem: items
     });
 
 });
 
+// reply to get '/work'
+app.get("/work", ( req, res) => {
+
+    res.render( 'list', {
+        listTitle: "Work List",
+        newListItem: workListItems
+    });
+
+});
+
 app.post("/", (req, res) => {
-    items.push(req.body.newItem);
-    res.redirect("/");
+
+    if( req.body.value === "Work List"){
+        workListItems.push(req.body.newItem);
+        res.redirect("/work");
+    }else{
+        items.push(req.body.newItem);
+        res.redirect("/");
+    }
+
+});
+
+app.get("/about", (req, res) => {
+
+    res.render("about");
+    
 });
