@@ -6,14 +6,14 @@ const app = express();
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({extended:true}));
 
+//using user defined modules
+const date = require( __dirname+ "/date.js");
+
 // initialize and use ejs
 app.set( "view engine", "ejs");
 
 //set the static directory to load css and media from
 app.use(express.static('public'));
-
-const date = require( __dirname+ "/date.js");
-
 
 // listen on port 3000
 app.listen( 3000, () => {
@@ -27,17 +27,8 @@ let workListItems = [];
 // reply to get '/'
 app.get("/", ( req, res) => {
 
-    var today = new Date();
-    var options = {
-        weekday: "long",
-        day: "numeric",
-        month: "long"
-    };
-
-    var date = today.toLocaleDateString("en-IN", options);
-
     res.render( 'list', {
-        listTitle: date,
+        listTitle: date.getDate(), //calling userdefined module
         newListItem: items
     });
 

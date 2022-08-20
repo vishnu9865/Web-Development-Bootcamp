@@ -1,6 +1,4 @@
-console.log(module);
-
-function getDate() {
+exports.getDate = function() {
 
     var today = new Date();
     var options = {
@@ -10,4 +8,11 @@ function getDate() {
     };
 
     return today.toLocaleDateString("en-IN", options);
+}
+
+exports.getDay = function() {
+    return new Date().toLocaleDateString(
+        "en-IN", 
+        { weekday: "long"}
+    );
 }
