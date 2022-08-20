@@ -17,6 +17,8 @@ app.listen( 3000, () => {
     console.log("Sever started on port 3000");
 });
 
+var items = [];
+
 // reply to get '/'
 app.get("/", ( req, res) => {
 
@@ -30,11 +32,13 @@ app.get("/", ( req, res) => {
     var date = today.toLocaleDateString("en-IN", options);
 
     res.render( 'list', {
-        dayEJS: date
+        dayEJS: date,
+        newListItem: items
     });
 
 });
 
 app.post("/", (req, res) => {
-    console.log(req.body.newItem);
+    items.push(req.body.newItem);
+    res.redirect("/");
 });
