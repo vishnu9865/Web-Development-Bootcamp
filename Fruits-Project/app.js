@@ -1,44 +1,70 @@
-const { MongoClient } = require("mongodb");
-const assert = require('assert')
-// Replace the uri string with your connection string.
+//initialize mongoose
+const e = require("express");
+const mongoose = require("mongoose");
 
-const uri =
-  "mongodb://localhost:27017";
+//connect to database
+mongoose.connect("mongodb://localhost:27017/fruitsDB");
 
-const dbname = 'fruitsDB';
-
-const client = new MongoClient(uri);
-
-client.connect(function(err) {
-    assert.equal(null, err);
-    console.log("Connected Successfully to server");
-
-    const db = client.db(dbname);
-
-    insertDocuments( db, function() {
-        client.close();
-    })
+const fruitSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: [
+            true,
+            'Fruit name is required'
+        ]
+    },
+    rating: {
+        type: Number,
+        min: [ 1, 'below mininum rating of 1'],
+        max: [ 10, 'above max. rating of 10']
+    },
+    review: String
 });
 
-const insertDocuments = ( db, callback) => {
-    const collection = db.collection( 'fruits');
+const Fruit = mongoose.model("Fruit", fruitSchema);
 
-    collection.insertMany([
-        {
-            name: "Apple",
-            score: 8
-        },
-        {
-            name: "Orange",
-            score: 6
-        },
-        {
-            name: "Banana",
-            score: 9
-        }
-    ], ( err, result) => {
-        assert.equal(err, null);
-        console.log("Inserted 3 documents into the collections");
-        callback(result);
-    });
-};
+const fruit = new Fruit({
+
+    rating: 10,
+    review: "Pretty solid as a fruit."
+});
+
+// fruit.save();
+
+const personSchema = new mongoose.Schema({
+    name: String,
+    age: Number
+});
+
+const Person = new mongoose.model("Person", personSchema);
+
+const person = new Person({
+    name: "John",
+    age: 37
+});
+
+// person.save();
+
+Fruit.find( ( err, fruits) => {
+    if(err) {
+        console.log(err);
+    }else {
+        mongoose.connection.close();
+        fruits.forEach( (obj) => {
+            console.log(obj.name);
+        });
+    }
+});
+
+// Fruit.updateOne({_id: "63041b5fd4dffd87378d6dc4"}, {name: "Peach"}, ( err) => {
+//     if( err) {
+//         console.log(err);
+//     }else {
+//         console.log("Successfully updated!")
+//     }
+// });
+
+Fruit.deleteOne({name:"Peach"}, (err) => {
+    if( err) console.log( err);
+    else console.log( "Successfully deleted!!");
+});
