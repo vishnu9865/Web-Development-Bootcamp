@@ -33,7 +33,6 @@ app.get("/", function(req, res){
   let posts;
   Post.find({}, (err, results) => {
     posts = results;
-    console.log(posts);
     res.render("home", {
       startingContent: homeStartingContent,
       posts: posts
