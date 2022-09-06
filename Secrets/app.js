@@ -99,11 +99,14 @@ app.get("/register", (req, res) => {
 });
 
 app.get("/secrets", function (req, res) {
-    if (req.isAuthenticated()) {
-        res.render("secrets");
-    } else {
-        res.redirect("/login");
-    }
+    User.find({"secret":{$ne:null}}, ( err, results) => {
+        if( err) {
+            console.log(err);
+        } else if( results) {
+            console.log( results);
+            res.render("secrets", {usersWithSecrets: results});
+        }
+    });
 });
 
 app.get("/submit", ( req, res) => {
@@ -174,10 +177,10 @@ app.post( "/submit", ( req, res) => {
                 foundUser.secret = submittedSecret;
                 foundUser.save( () => {
                     res.redirect("/secrets");
-                })
+                });
             }
         }
-    })
+    });
 });
 
 // start the server
